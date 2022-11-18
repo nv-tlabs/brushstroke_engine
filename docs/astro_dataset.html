@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Artistic Stroke Dataset from NVIDIA Toronto AI Lab contains sample of different drawing media">
+  <meta name="keywords" content="image dataset">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+  <link href="assets/style.css" rel='stylesheet' type='text/css' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css' />
+  <title>
+    Artistic Stroke Dataset
+</title>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <div>
+          <a href="https://www.nvidia.com/"><img width="100%" src="assets/nvidia.svg" /></a>
+          <a href="https://nv-tlabs.github.io/"><strong>Toronto AI Lab</strong></a>
+      </div>
+  </div>
+  <div class="title">
+    <h1>
+      AStro: Artistic Stroke Dataset
+  </h1>
+</div>
+
+<div style="clear: both">
+    <div class="paper-btn-parent">
+        <a class="supp-btn" href="index.html">
+            <span class="material-icons"> description </span> 
+            Publication
+        </a>
+
+        <a class="supp-btn" href="#download">
+            <span class="material-icons"> download </span> 
+            Download
+        </a>
+    </div>
+</div>
+
+<section id="teaser">
+    <figure>
+        <img class="cw_part" src="assets/astro.jpeg" />
+    </figure>
+</section>
+
+<section>
+    <h2>Abstract</h2>
+    <hr>
+    <p>
+        AStro dataset was collected to support Deep Learning techniques for interactive drawing media by learning from unlabeled media samples. 
+        We informally captured two style datasets using a hand-held mobile phone. Style 1 contains 146 scribbles of common physical and digital tools like paints and crayons. Style 2 contains 241 photos of eclectic materials, like ribbons and beads. To obtain patch datasets X1 and X2, we draw random patches and augment them with standard image processing, expanding the training set diversity. As a proxy for user control, we also generate a synthetic geometry dataset of random splines, cut into a patch dataset G. 
+    </p>
+</section>
+
+<section>
+    <h2 id="download">Download</h2>
+    <hr>
+    <p>
+        Coming soon.
+    </p>
+</section>
+
+<section>
+    <h2>Additional Details</h2>
+    <hr>
+    <p>
+    To support softer edge losses, we automatically preprocess G into a tri-band dataset, where curve boundaries are marked "uncertain".
+    In addition, style datasets are passed through image-processing heuristics to generate corresponding black-on-white strokes. In the
+    past these geometry datasets were only used for evaluation of methods, but they could be also useful for training.
+    </p>
+    <figure>
+        <img class="cw_part" src="assets/astro_aux.jpg" />
+    </figure>
+</section>
+
+<section>
+    <h2>Citation</h2>
+    <hr>
+    <p>
+        If building on this data, please cite:
+        <pre class="language-latex citation">
+            <code class="language-latex">
+@article{shugrina2022neube,
+  title={Neural Brushstroke Engine: Learning a Latent Style Space of Interactive Drawing Tools},
+  author={Shugrina, Maria and Li, Chin-Ying and Fidler, Sanja},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={41},
+  number={6},
+  year={2022},
+  publisher={ACM New York, NY, USA}
+}
+            </code>
+        </pre>
+    </p>
+</section>
+
+</body>
+</html>
