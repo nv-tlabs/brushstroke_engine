@@ -1,0 +1,34 @@
+-e git+https://github.com/openai/CLIP.git@b46f5ac7587d2e1862f8b7b1573179d80dcdd620#egg=clip
+click==8.1.3
+flask==1.1.2
+imageio-ffmpeg==0.4.3
+itsdangerous==2.0.1
+jinja2==3.0.1
+lpips==0.1.3
+matplotlib==3.3.2
+ninja==1.10.2
+pandas==1.3.5
+pillow==8.1.0
+psutil==5.7.2
+pyspng===0.1.0
+requests==2.24.0
+scikit-image==0.17.2
+scikit-learn==0.23.2
+scipy==1.5.2
+tensorboard==2.4.1
+tensorboardx==2.1
+torchmetrics==0.9.3
+tornado==6.1
+tqdm==4.56.0
+wandb==0.12.2
+werkzeug==1.0.1
+
+# For notebooks
+# jupyterlab==3.0.16
+# seaborn==0.11.2
+
+# Not needed for any experiments included in the paper
+# pytorch-lightning
+# efficientnet_pytorch
+# opencv-python==4.5.2.54
+# splines==0.1

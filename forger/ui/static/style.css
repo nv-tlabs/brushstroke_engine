@@ -1,0 +1,210 @@
+ :root {
+   --gray-color: #f5f5f5;
+   --nvidia-color: #76B900;
+ }
+
+ body {
+     margin: 0;
+   padding: 0;
+   font-family: DINPro,Helvetica,Arial,Sans-Serif;
+   background-color: var(--gray-color);
+   overflow: hidden;
+ }
+
+ .tinyfont {
+    font-size: 70%;
+ }
+
+ .pr {
+    position: relative;
+ }
+
+/* CONTROL BAR ------------------------------------------------------------ */
+
+ nav,
+ .nav {
+     background: var(--gray-color);
+     border-bottom: 1px solid #ddd;
+ }
+
+ .nav-logo {
+     vertical-align: top;
+     margin: 5px 0 5px 5px;
+     display: inline-block;
+ }
+
+ .tblock {
+     margin: 20px 20px 20px 5px;
+ }
+
+ .nav-container {
+ }
+
+ .nav-container .block,
+ .nav-container .pickr {
+     display: inline-block;
+     vertical-align: middle;
+ }
+
+ .title {
+     font-weight: 800;
+ }
+
+ .spacer {
+    height: 100%;
+    margin: 0 10px;
+    border-left: 1px solid #cccccc;
+    padding: 10px 0;
+ }
+
+ .popup {
+     background-color: white;
+     padding: 20px;
+     position: absolute;
+     left: 35%;
+     z-index: 5;
+     box-shadow: 5px 5px 8px 8px #888888;
+     width: 50vw;
+ }
+
+ .debug-container div {
+    margin: 10px 0;
+ }
+
+ .debug-container {
+    position: relative;
+ }
+
+ .debug-container img {
+    width: 100%;
+ }
+
+#debug-img-container {
+    padding: 10px;
+}
+
+.checkered {
+    background-image: url(img/check.png);
+    background-repeat: repeat;
+    background-size: 1%;
+}
+
+.show-check {
+    width: 10%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+ /* CANVASES     ------------------------------------------------------------ */
+
+#canvas-content {
+    width: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+#fg-canvas,
+#fg-canvas-baked,
+#bg-canvas-baked {
+    position:absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.transparent {
+    opacity: 1%;
+}
+
+/* TOUCH DEVICES ------------------------------------------------------------ */
+
+ /* no-touch-style */
+ .nts {
+     -webkit-tap-highlight-color: transparent;
+ }
+
+ .nsel {
+     -webkit-touch-callout: none; /* iOS Safari */
+     -webkit-user-select: none;   /* Chrome/Safari/Opera */
+     -khtml-user-select: none;    /* Konqueror */
+     -moz-user-select: none;      /* Firefox */
+     -ms-user-select: none;       /* Internet Explorer/Edge */
+     user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
+ }
+
+ /* Brush Dialog ------------------------------------------------------------ */
+
+ .brush-heading {
+     padding: 10px;
+     background-color: var(--gray-color);
+     border-bottom: 1px solid #ddd;
+     margin-top: 5px;
+ }
+
+ .brushinfo {
+     display: inline-block;
+     width: 31%;
+     font-size: 50%;
+ }
+
+ .brushinfo img {
+     width: 100%;
+ }
+
+ .brush_container {
+     margin: 10px;
+     position: relative;
+ }
+
+ .brush-popup {
+     left: 0;
+     background-color: white;
+     padding: 20px;
+     position: absolute;
+     left: 0;
+     z-index: 4;
+     box-shadow: 3px 3px 3px 3px #ababab;
+     width: 30vw;
+     height: 80%;
+     overflow-y: scroll;
+     overflow-x: hidden;
+ }
+
+ svg {
+     pointer-events: none;
+ }
+
+ object {
+     pointer-events: none;
+ }
+
+ .brushinfo.selected img {
+     box-shadow: 0 0 5px 5px #999;
+ }
+
+ .title a {
+    color: inherit !important;
+     text-decoration: none;
+ }
+
+ .arrow {
+    border: solid #666;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+     margin-left: 10px;
+     cursor: pointer;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
