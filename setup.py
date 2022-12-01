@@ -5,7 +5,7 @@ reqs = ['numpy>=1.19', 'scikit-image>=0.17']
 
 setup(
     name='forger',
-    version='0.0.1',
+    version='0.1.0',
     author='Maria Shugrina, Chin-Ying Li',
     author_email='mshugrina@nvidia.com',
     description='Neural Brushstroke Engine project.',
