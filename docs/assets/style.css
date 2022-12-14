@@ -4,8 +4,15 @@ body {
     font-size: 17px;
     margin-left: auto;
     margin-right: auto;
-    width: 980px;
+    width: 100%;
 }
+
+@media screen and (min-width: 1000px) {
+    body {
+        width: 1000px;
+    }
+}
+
 h1 {
     font-weight:300;
     line-height: 1.15em;
@@ -36,7 +43,7 @@ h2 {
     padding: 16px 0px 16px 0px;
 }
 section {
-    margin: 32px 0px 32px 0px;
+    margin: 32px 10px 32px 10px;
     text-align: justify;
     clear: both;
 }
@@ -255,4 +262,24 @@ figure .cw_part {
     width: 70%;
     margin: 0 auto;
     display: block;
+}
+
+.video-container {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+}
+
+.video-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
