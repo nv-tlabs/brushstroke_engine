@@ -87,7 +87,7 @@ supports style interpolation, e.g. like this:
 
 ## Training
 
-Coming soon.
+If you need access to our training scripts, please comment on <a href="https://github.com/nv-tlabs/brushstroke_engine/issues/4">this bug</a> so we can prioritize release. 
 
 ## Code organization
 
