@@ -20,6 +20,9 @@ BUNDLED_FONTS_PATH = os.path.realpath(
     os.path.join(os.path.dirname(os.path.realpath(__file__)),
                  os.path.pardir, 'resources', 'fonts'))
 
+REPO_ROOT = os.path.realpath(
+    os.path.join(os.path.dirname(os.path.realpath(__file__)), os.path.pardir, os.path.pardir))
+
 
 def load_bundled_geometry_image(basename, width=None):
     if not os.path.isdir(BUNDLED_GEOMETRY_PATH):
