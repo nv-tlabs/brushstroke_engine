@@ -141,9 +141,36 @@ python -m forger.ui.run --port=8000 \
 **Note**: note that unfortunately we do not support multi-gpu training, and things will likely fail or behave unexpectedly
 if you try to train with multiple GPUs.
 
+## Visualizing Styles
+
+We provide lots of utilities for visualizing styles available in the model in bulk in [forger/viz](forger/viz). For 
+example, to render a large number of styles from a brush library, run (use `--mode=1` to visualize grids, `--mode=0` 
+to visualize individual patches):
+
+```shell
+export STYLE=style2
+python -m forger.viz.visualize_main \
+  --gan_checkpoint=models/neube/$STYLE/snapshot.pkl \
+  --style_seeds=models/neube/$STYLE/brush_libs/random5K_clarity0.9.txt \
+  --num_random_colors=0 --mode=0 \
+  --output_dir=models/neube/$STYLE/brush_viz/random5K_clarity0.9
+```
 ## Brush Optimization
 
-Coming soon! 
+The script to project existing style image and its geometry into the style space is [scripts.project_main.py](scripts/project_main.py),
+and like all our commands it should be run as a module:
+```shell
+ python -m scripts.project_main \
+           --gan_checkpoint=$GAN \
+           --output_dir=$OUT_DIR \
+           --target_image=$T \
+           --geom_image=$GEO \
+           --log_level=20
+```
+
+Sample clip optimization script is included in the notebook [scripts/optimize_clip.jpynb](scripts/optimize_clip.jpynb). 
+To expedite CLIP optimization we first search among pre-rendered styles, so make sure to run the visualization command
+above (see Visualizing Styles) to render random styles before trying this notebook. 
 
 ## Code organization
 

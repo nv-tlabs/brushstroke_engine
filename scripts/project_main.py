@@ -471,8 +471,6 @@ def run_projection(
 
     # HACK
 
-
-
     # np.savez('/tmp/ws2.npz', w=projected_w.detach().cpu().numpy(),
     #          geom0=geom_feature[0].detach().cpu().numpy(),
     #          geom1=geom_feature[1].detach().cpu().numpy())
