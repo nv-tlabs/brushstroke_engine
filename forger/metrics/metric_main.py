@@ -103,7 +103,7 @@ def stitching_metric_loop(random_state, geom_iterator, geom_input_channel, geom_
 
 
 def paint_engine_metric_loop(generator,
-                             style_generator,
+                             style_library,
                              nbatches_per_style,
                              fullres_geom_iterator,
                              stitcher,
@@ -140,7 +140,7 @@ def paint_engine_metric_loop(generator,
     with torch.no_grad():
         for style_id in style_library.get_style_ids():
             seed_str = '{:<15}'.format(style_id)
-            logger.info('Evaluating style ({}) {} / {}'.format(style_id, nprocessed, total_styles))
+            logger.debug('Evaluating style ({}) {} / {}'.format(style_id, nprocessed, total_styles))
             style_library.set_style(style_id, generator.brush_options)
 
             style_losses = {}

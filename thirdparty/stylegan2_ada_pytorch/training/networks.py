@@ -314,7 +314,7 @@ class SynthesisLayer(torch.nn.Module):
                 pass
             if needs_update:
                 setattr(layer, attr, getattr(unpickled_layer, attr))
-                logger.info(f'Setting attribute {attr}')
+                logger.debug(f'Setting attribute {attr}')
 
         if not hasattr(unpickled_layer, 'noise_grid'):
             layer.register_buffer('noise_grid', create_sampling_grid(unpickled_layer.resolution))
@@ -560,7 +560,7 @@ class SynthesisBlock(torch.nn.Module):
                 pass
             if needs_update:
                 setattr(block, attr, getattr(unpickled_block, attr))
-                logger.info(f'Setting attribute {attr}')
+                logger.debug(f'Setting attribute {attr}')
         return block
 
     def __init__(self,
