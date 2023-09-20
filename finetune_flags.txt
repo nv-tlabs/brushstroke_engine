@@ -1,0 +1,5 @@
+--geom_warmstart_losses='0.5*iou_inv(uvs)+0.5*lpips(fake_orig)+0.5*l1(fake_orig)'
+--geom_warmstart_mode=last_and_rgb
+--geom_warmstart_kimg=1000
+--snap=10
+--exit_after_warmstart

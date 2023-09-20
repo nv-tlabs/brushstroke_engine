@@ -43,7 +43,14 @@ run the following from the **root of this repo**:
 ```shell
 unzip ~/Downloads/models.zip -d .
 ```
-See [Project Website](https://nv-tlabs.github.io/brushstroke_engine/) for training dataset downloads.
+Data is available <a href="https://drive.google.com/drive/folders/1doPsiv8kM5BHLfhA4DzE0tLxNj_5keUE?usp=sharing">here</a>,
+        where <i>atro_raw.zip</i> contains raw images and <i>astro_datsets.zip</i> contains augmented patch datasets that can
+        be directly used for training. This data
+        may only be used for research, evaluation and non-commercial purposes and may <b>not</b>
+        be redistributed. Permission is granted to distribute trained models only for research, evaluation and non-commercial purposes
+        with appropriate terms attached. Exact license terms are included in [LICENSE](LICENSE). See [Project Website](https://nv-tlabs.github.io/brushstroke_engine/) for training dataset details. 
+
+If using this data, code or models please make sure to cite this work.
 
 ## Drawing Interface
 
@@ -87,7 +94,56 @@ supports style interpolation, e.g. like this:
 
 ## Training
 
-If you need access to our training scripts, please comment on <a href="https://github.com/nv-tlabs/brushstroke_engine/issues/4">this bug</a> so we can prioritize release. 
+First download the training datasets (see above), and unpack as follows into the **root of this repo**: 
+
+```shell
+mkdir data
+unzip ~/Downloads/astro_datasets.zip -d data
+```
+You will also need to download the pretrained autoencoder (see model downloads above), and install `awk` and `tee`
+commandline utilities. 
+
+To run **default training**, execute:
+```shell
+DATA_MODE=style2
+
+# Default training run (projected duration ~2 weeks). 
+bash neube_train.sh $DATA_MODE train /my/output/dir  # Run without arguments to get help and options
+
+# Fintunine obtained checkpoint to improve background clarity (~1 day)
+bash neube_train.sh $DATA_MODE finetune /my/output/dir \
+  '--resume=/my/output/dir/neube_exp/00000-default_train-.../network-snapshot-010000.pkl'
+
+# Run UI with test checkpoint and go to localhost:8000/?demo&canvas=2000 in your browser
+python -m forger.ui.run --port=8000 \
+  --gan_checkpoint=/my/output/dir/neube_exp/00001-default_finetune-.../network-snapshot-warmstarted.pkl
+```
+
+You can also provide custom arguments to the train commands. For example, you can provide `--wandb_group=test --wandb_project=neube`
+to log to [WandB](https://wandb.ai/). 
+
+To run a **really short test training run to make sure things work**, provide your
+own `--kimg` (thousands of training images seen by model) flag and `--snap` (how often to save model snapshots, evaluate
+and save visualizations) flags. E.g.:
+``` shell
+# Train (short test run)
+bash neube_train.sh styles2 train /tmp/forger_train "--kimg=2 --geom_warmstart_kimg=1 --snap=1"
+
+# Finetune (short test run)
+bash neube_train.sh styles2 finetune /tmp/forger_train \
+   "--geom_warmstart_kimg=1 --snap=1 --resume=/tmp/forger_train/neube_exp/00000-default_train-.../network-snapshot-000002.pkl"
+   
+# Run UI with test checkpoint and go to localhost:8000/?demo&canvas=2000 in your browser
+python -m forger.ui.run --port=8000 \
+        --gan_checkpoint=/tmp/forger_train/neube_exp/00001-default_finetune-.../network-snapshot-warmstarted.pkl
+```
+
+**Note**: note that unfortunately we do not support multi-gpu training, and things will likely fail or behave unexpectedly
+if you try to train with multiple GPUs.
+
+## Brush Optimization
+
+Coming soon! 
 
 ## Code organization
 
