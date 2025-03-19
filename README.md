@@ -38,17 +38,13 @@ We additionally provide a Docker file.
 
 ## Datasets and Models
 
-Pretrained models are available in [models.zip](https://drive.google.com/file/d/1Ao-3LZPmOSCZA7GIm5piQ3T6PK63NCZe/view?usp=sharing) (backup link [here](https://drive.google.com/file/d/1cCIBraCUpBygtWuoym4kqAwcPlx1V-rc/view?usp=sharing)). To setup downloaded models
+Pretrained models are available in [models.zip](https://nvidia-caat.s3.us-east-2.amazonaws.com/neube/models.zip) (backup link [here](https://drive.google.com/file/d/1OU7cEVeALBVaqDabj4uBQ1xJ8NrdOAI4/view?usp=sharing)). To setup downloaded models
 run the following from the **root of this repo**:
 ```shell
 unzip ~/Downloads/models.zip -d .
 ```
-Data is available <a href="https://drive.google.com/drive/folders/1doPsiv8kM5BHLfhA4DzE0tLxNj_5keUE?usp=sharing">here</a>,
-        where <i>atro_raw.zip</i> contains raw images and <i>astro_datsets.zip</i> contains augmented patch datasets that can
-        be directly used for training. This data
-        may only be used for research, evaluation and non-commercial purposes and may <b>not</b>
-        be redistributed. Permission is granted to distribute trained models only for research, evaluation and non-commercial purposes
-        with appropriate terms attached. Exact license terms are included in [LICENSE](LICENSE). See [Project Website](https://nv-tlabs.github.io/brushstroke_engine/) for training dataset details. 
+The data is available for download, including raw and processed files.
+See [Project Website](https://nv-tlabs.github.io/brushstroke_engine/) for training dataset details. 
 
 If using this data, code or models please make sure to cite this work.
 
