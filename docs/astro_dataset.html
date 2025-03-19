@@ -12,7 +12,13 @@
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css' />
   <title>
     Artistic Stroke Dataset
-</title>
+  </title>
+  <script type="text/javascript">
+    if (window.location.host !== 'research.nvidia.com') {
+        console.log('Redirecting to research.nvidia.com');
+        window.location = 'https://research.nvidia.com/labs/toronto-ai/brushstroke_engine/astro_dataset.html';
+    }
+  </script>
 </head>
 
 <body>
@@ -61,12 +67,14 @@
     <h2 id="download">Download</h2>
     <hr>
     <p>
-        The data is available <a href="https://drive.google.com/drive/folders/1doPsiv8kM5BHLfhA4DzE0tLxNj_5keUE?usp=sharing">here</a>,
-        where <i>atro_raw.zip</i> contains raw images and <i>astro_datsets.zip</i> contains augmented patch datasets that can
+        The data is available for download, including raw and processed files.
+        Download <a href="https://nvidia-caat.s3.us-east-2.amazonaws.com/neube/astro_raw-002.zip">atro_raw.zip</a> for raw images and
+        <a href="https://nvidia-caat.s3.us-east-2.amazonaws.com/neube/astro_datasets-001.zip">astro_datsets.zip</a> for augmented patch datasets that can
         be directly used for training. This data
         may only be used for research, evaluation and non-commercial purposes and may <b>not</b>
         be redistributed. Permission is granted to distribute trained models only for research, evaluation and non-commercial purposes
-        with appropriate terms attached. Exact license terms will be included soon. If using this data please make sure to <a href="#cite">cite this work</a>.
+        with appropriate terms attached. See <a href="https://github.com/nv-tlabs/brushstroke_engine/blob/c7e580a16cce3db5923238776c5e372709fb920f/LICENSE">Licence</a>. 
+        If using this data please make sure to <a href="#cite">cite this work</a>.
     </p>
 </section>
 
